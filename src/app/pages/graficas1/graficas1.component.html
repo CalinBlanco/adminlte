@@ -1,3 +1,116 @@
-<p>
-  graficas1 works!
-</p>
+<!-- DONUT CHART -->
+<div class="row">
+  <div class="col-6">
+    <div class="card card-secondary">
+      <div class="card-header">
+        <h3 class="card-title">{{ graficos.graficos1.leyenda}}</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-widget="collapse">
+            <i class="fa fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-widget="remove">
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+      </div>
+      <div class="card-body">
+
+        <app-grafico-dona
+          [labels]="graficos.graficos1.labels"
+          [data]="graficos.graficos1.data"
+          type="doughnut"
+        ></app-grafico-dona>
+        
+      </div>
+      <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+  </div>
+
+  <div class="col-6">
+    <div class="card card-secondary">
+      <div class="card-header">
+        <h3 class="card-title">{{ graficos.graficos2.leyenda}}</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-widget="collapse">
+            <i class="fa fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-widget="remove">
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+      </div>
+      <div class="card-body">
+        
+          <app-grafico-dona
+          [labels]="graficos.graficos2.labels"
+          [data]="graficos.graficos2.data"
+          type="doughnut"
+        ></app-grafico-dona>
+        
+      </div>
+      <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+  </div>
+</div>
+
+<div class="row">
+    <div class="col-6">
+      <div class="card card-secondary">
+        <div class="card-header">
+          <h3 class="card-title">{{ graficos.graficos2.leyenda}}</h3>
+  
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-widget="collapse">
+              <i class="fa fa-minus"></i>
+            </button>
+            <button type="button" class="btn btn-tool" data-widget="remove">
+              <i class="fa fa-times"></i>
+            </button>
+          </div>
+        </div>
+        <div class="card-body">
+  
+            <app-grafico-dona
+            [labels]="graficos.graficos3.labels"
+            [data]="graficos.graficos3.data"
+            type="doughnut"
+          ></app-grafico-dona>
+          
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+    </div>
+  
+    <div class="col-6">
+      <div class="card card-secondary">
+        <div class="card-header">
+          <h3 class="card-title">{{ graficos.graficos4.leyenda }}</h3>
+  
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-widget="collapse">
+              <i class="fa fa-minus"></i>
+            </button>
+            <button type="button" class="btn btn-tool" data-widget="remove">
+              <i class="fa fa-times"></i>
+            </button>
+          </div>
+        </div>
+        <div class="card-body">
+          
+            <app-grafico-dona
+            [labels]="graficos.graficos4.labels"
+            [data]="graficos.graficos4.data"
+            type="doughnut"
+          ></app-grafico-dona>
+          
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+    </div>
+  </div>
