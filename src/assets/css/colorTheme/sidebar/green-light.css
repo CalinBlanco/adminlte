@@ -1,0 +1,96 @@
+
+.brand-link:hover {
+  color: rgba(0, 0, 0, 0.8);
+  text-decoration: none;
+}
+.brand-link {
+  color: rgba(0, 0, 0, 0.8);
+  border-bottom: 1px solid #dee2e6;
+}
+
+.user-panel {
+  border-bottom: 1px solid #dee2e6;
+}
+
+
+
+.sidebar-theme {
+  background-color: #ffffff;
+}
+
+.sidebar-theme .user-panel a:hover {
+  color: #212529;
+}
+
+.sidebar-theme .user-panel .status {
+  color: #343a40;
+  background: #f4f4f5;
+}
+
+.sidebar-theme .user-panel .status:hover, .sidebar-theme .user-panel .status:focus, .sidebar-theme .user-panel .status:active {
+  color: #212529;
+  background: #ececed;
+}
+
+.sidebar-theme .user-panel .dropdown-menu {
+  border-color: #e7e7e8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.sidebar-theme .user-panel .dropdown-item {
+  color: #212529;
+}
+
+.sidebar-theme .nav-sidebar > .nav-item > .nav-link:active, .sidebar-theme .nav-sidebar > .nav-item > .nav-link:focus {
+  color: #343a40;
+}
+
+.sidebar-theme .nav-sidebar > .nav-item.menu-open > .nav-link,
+.sidebar-theme .nav-sidebar > .nav-item:hover > .nav-link {
+  /* Cambia del color del item del menu  */
+  color: #ffffff;
+  background-color: rgba(6, 215, 156, 1);
+}
+
+.sidebar-theme .nav-sidebar > .nav-item > .nav-link.active {
+  color: #ffffff;
+  background-color: #06d79c;
+}
+
+.sidebar-theme .nav-sidebar > .nav-item > .nav-treeview {
+  background: transparent;
+}
+
+.sidebar-theme .nav-header {
+  color: #292d32;
+  background: inherit;
+}
+
+.sidebar-theme .sidebar a {
+  color: #343a40;
+}
+
+.sidebar-theme .sidebar a:hover {
+  text-decoration: none;
+}
+
+.sidebar-theme .nav-treeview > .nav-item > .nav-link {
+  /* Cambia el color de fuente de las opciones del treeview */
+  color: #525252;
+}
+
+.sidebar-theme .nav-treeview > .nav-item > .nav-link:hover {
+  /* Cambia el color de fondo de cada item del treeview */
+  color: #303030;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-theme .nav-treeview > .nav-item > .nav-link.active, .sidebar-theme .nav-treeview > .nav-item > .nav-link.active:hover {
+  /* Cambia el color del font del item activo del treeview */
+  color: #1c1f22;
+  background-color: rgba(6, 215, 156, 0.4);
+}
+
+/* Label */
+.label-theme {
+  background-color: #2f3d4a; }

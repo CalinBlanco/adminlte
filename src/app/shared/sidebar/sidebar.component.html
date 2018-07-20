@@ -1,7 +1,7 @@
 <!-- Main Sidebar Container -->
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar sidebar-theme elevation-4">
   <!-- Brand Logo -->
-  <a href="#" class="brand-link">
+  <a routerLink="#" class="brand-link">
     <img src="assets/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
     <span class="brand-text font-weight-light">AdminLTE 3</span>
   </a>
@@ -17,9 +17,15 @@
           <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+            <!-- <a href="#" class="nav-link active">
               <img src="assets/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-              <a href="#" class=""> Alexander Pierce</a>
+              <p href="#" class="nav-link active"> Alexander Pierce</p>
+            </a> -->
+            <a routerLinkActive="active" routerLink="#" class="nav-link">
+              <i class="nav-icon fas fa-user-cog"></i>
+              <p>
+                Alexander Pierce
+              </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
@@ -41,13 +47,13 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a routerLinkActive="active" routerLink="/account-settings" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>Account Setting</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a routerLink="/login" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>Logout</p>
                 </a>
@@ -67,22 +73,26 @@
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-        <li class="nav-item has-treeview">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fa fa-dashboard"></i>
+        <li *ngFor="let menu of _sidebar.menu" class="nav-item has-treeview">
+
+          <a routerLink="#" class="nav-link">
+            <i [class]="menu.icono"></i>
             <p>
-              Dashboard
+              {{ menu.titulo }}
+              &nbsp;&nbsp;&nbsp;
+              <span class="left label label-rouded label-theme">{{ menu.submenu.length}}</span>
+              <!-- <span class="badge-pill badge-danger navbar-badge">3</span> -->
               <i class="right fa fa-angle-left"></i>
             </p>
           </a>
           <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="#" class="nav-link">
+            <li *ngFor="let submenu of menu.submenu" class="nav-item">
+              <a routerLinkActive="active" [routerLink]="[ submenu.url ]" class="nav-link">
                 <i class="fa fa-circle-o nav-icon"></i>
-                <p>Dashboard v1</p>
+                <p>{{ submenu.titulo }}</p>
               </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a href="#" class="nav-link">
                 <i class="fa fa-circle-o nav-icon"></i>
                 <p>Dashboard v2</p>
@@ -93,7 +103,7 @@
                 <i class="fa fa-circle-o nav-icon"></i>
                 <p>Dashboard v3</p>
               </a>
-            </li>
+            </li> -->
           </ul>
         </li>
       </ul>

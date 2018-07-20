@@ -1,0 +1,118 @@
+<!-- Colores para el NavBar -->
+<div class="row">
+  <div class="col-12">
+    <div class="card card-white">
+      <div class="card-header">
+        <h3 class="card-title">Colores para el NavBar</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-widget="collapse">
+            <i class="fa fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-widget="remove">
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+      </div>
+      <div class="card-body">
+        <ul id="themecolors">
+          
+            <div class="d-flex flex-wrap mb-3">
+              <li><a #nav1 (click)="cambiarColorNav('default', nav1)" data-theme="default" class="selectorNav default-theme elevation-2"></a></li>
+              <li><a #nav2 (click)="cambiarColorNav('green', nav2)" data-theme="green" class="selectorNav green-theme elevation-2"></a></li>
+              <li><a #nav3 (click)="cambiarColorNav('red', nav3)" data-theme="red" class="selectorNav red-theme elevation-2"></a></li>
+              <li><a #nav4 (click)="cambiarColorNav('blue', nav4)" data-theme="blue" class="selectorNav blue-theme elevation-2"></a></li>
+              <li><a #nav5 (click)="cambiarColorNav('purple', nav5)" data-theme="purple" class="selectorNav purple-theme elevation-2"></a></li>
+              <li><a #nav6 (click)="cambiarColorNav('megna', nav6)" data-theme="megna" class="selectorNav megna-theme elevation-2"></a></li>
+            </div>
+
+
+            <!-- <li class="d-block"><b>Con el sidebar oscuro</b></li>
+            <div class="d-flex flex-wrap mb-3">
+                <li><a #link7 (click)="cambiarColor('default-dark', link7)" data-theme="default-dark" class="selector default-dark-theme elevation-2"></a></li>
+                <li><a #link8 (click)="cambiarColor('green-dark', link8)" data-theme="green-dark" class="selector green-dark-theme elevation-2"></a></li>
+                <li><a #link9 (click)="cambiarColor('red-dark', link9)" data-theme="red-dark" class="selector red-dark-theme elevation-2"></a></li>
+                <li><a #link10 (click)="cambiarColor('blue-dark', link10)" data-theme="blue-dark" class="selector blue-dark-theme elevation-2"></a></li>
+                <li><a #link11 (click)="cambiarColor('purple-dark', link11)" data-theme="purple-dark" class="selector purple-dark-theme elevation-2"></a></li>
+                <li><a #link12 (click)="cambiarColor('megna-dark', link12)" data-theme="megna-dark" class="selector megna-dark-theme elevation-2"></a></li>
+
+
+              <li><a data-theme="default-dark" class="selector default-dark-theme">7</a></li>
+              <li><a data-theme="green-dark" class="selector green-dark-theme">8</a></li>
+              <li><a data-theme="red-dark" class="selector red-dark-theme">9</a></li>
+              <li><a data-theme="blue-dark" class="selector blue-dark-theme">10</a></li>
+              <li><a data-theme="purple-dark" class="selector purple-dark-theme">11</a></li>
+              <li><a data-theme="megna-dark" class="selector megna-dark-theme">12</a></li>
+            </div> -->
+
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /. Colores para el NavBar -->
+
+<!-- Colores para el SideBar -->
+<div class="row">
+    <div class="col-12">
+      <div class="card card-white">
+        <div class="card-header">
+          <h3 class="card-title">Colores para el SideBar</h3>
+  
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-widget="collapse">
+              <i class="fa fa-minus"></i>
+            </button>
+            <button type="button" class="btn btn-tool" data-widget="remove">
+              <i class="fa fa-times"></i>
+            </button>
+          </div>
+        </div>
+        <div class="card-body">
+          <ul id="themecolors">
+            
+              <li class="d-block"><b>Con el sidebar claro</b></li>
+              <div class="d-flex flex-wrap mb-3">
+                <li><a #side1 (click)="cambiarColorSide('default-light', side1)" data-theme="default-light" class="selectorSide default-theme elevation-2"></a></li>
+                <li><a #side2 (click)="cambiarColorSide('green-light', side2)" data-theme="green-light" class="selectorSide green-theme elevation-2"></a></li>
+                <li><a #side3 (click)="cambiarColorSide('red-light', side3)" data-theme="red-light" class="selectorSide red-theme elevation-2"></a></li>
+                <li><a #side4 (click)="cambiarColorSide('blue-light', side4)" data-theme="blue-light" class="selectorSide blue-theme elevation-2"></a></li>
+                <li><a #side5 (click)="cambiarColorSide('purple-light', side5)" data-theme="purple-light" class="selectorSide purple-theme elevation-2"></a></li>
+                <li><a #side6 (click)="cambiarColorSide('megna-light', side6)" data-theme="megna-light" class="selectorSide megna-theme elevation-2"></a></li>
+  
+                
+                <!-- <li><a data-theme="default" class="selector default-theme">2</a></li>
+                <li><a data-theme="green" class="selector green-theme">2</a></li>
+                <li><a data-theme="red" class="selector red-theme">3</a></li>
+                <li><a data-theme="blue" class="selector blue-theme">4</a></li>
+                <li><a data-theme="purple" class="selector purple-theme">5</a></li>
+                <li><a data-theme="megna" class="selector megna-theme">6</a></li> -->
+              </div>
+  
+  
+              <li class="d-block"><b>Con el sidebar oscuro</b></li>
+              <div class="d-flex flex-wrap mb-3">
+                  <li><a #side7 (click)="cambiarColorSide('default-dark', side7)" data-theme="default-dark" class="selectorSide default-dark-theme elevation-2"></a></li>
+                  <li><a #side8 (click)="cambiarColorSide('green-dark', side8)" data-theme="green-dark" class="selectorSide green-dark-theme elevation-2"></a></li>
+                  <li><a #side9 (click)="cambiarColorSide('red-dark', side9)" data-theme="red-dark" class="selectorSide red-dark-theme elevation-2"></a></li>
+                  <li><a #side10 (click)="cambiarColorSide('blue-dark', side10)" data-theme="blue-dark" class="selectorSide blue-dark-theme elevation-2"></a></li>
+                  <li><a #side11 (click)="cambiarColorSide('purple-dark', side11)" data-theme="purple-dark" class="selectorSide purple-dark-theme elevation-2"></a></li>
+                  <li><a #side12 (click)="cambiarColorSide('megna-dark', side12)" data-theme="megna-dark" class="selectorSide megna-dark-theme elevation-2"></a></li>
+  
+  
+                <!-- <li><a data-theme="default-dark" class="selector default-dark-theme">7</a></li>
+                <li><a data-theme="green-dark" class="selector green-dark-theme">8</a></li>
+                <li><a data-theme="red-dark" class="selector red-dark-theme">9</a></li>
+                <li><a data-theme="blue-dark" class="selector blue-dark-theme">10</a></li>
+                <li><a data-theme="purple-dark" class="selector purple-dark-theme">11</a></li>
+                <li><a data-theme="megna-dark" class="selector megna-dark-theme">12</a></li> -->
+              </div>
+  
+          </ul>
+  
+        </div>
+      </div>
+    </div>
+</div>
+<!-- /. Colores para el SideBar -->

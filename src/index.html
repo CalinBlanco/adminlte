@@ -7,7 +7,8 @@
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
@@ -16,6 +17,15 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <!-- iCheck -->
   <link rel="stylesheet" href="assets/plugins/iCheck/square/blue.css">
+
+  <!-- cambiar color del tema nav -->
+  <link id="temaNav" rel="stylesheet">
+
+  <!-- cambiar color del tema sidebar -->
+  <link id="temaSide" rel="stylesheet">
+
+  <!-- cambiar color del tema cards -->
+  <!-- <link rel="stylesheet" href="assets/css/colorTheme/card/white.css"> -->
   
   <base href="/">
 
@@ -25,22 +35,27 @@
 
 <body class="hold-transition sidebar-mini">
   <app-root></app-root>
-
-  <!-- jQuery -->
-  <script src="assets/plugins/jquery/jquery.min.js"></script>
-  <!-- Bootstrap 4 -->
-  <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- SlimScroll -->
-  <script src="assets/plugins/slimScroll/jquery.slimscroll.min.js"></script>
-  <!-- FastClick -->
-  <script src="assets/plugins/fastclick/fastclick.js"></script>
   <!-- AdminLTE App -->
-  <script src="assets/js/adminlte.min.js"></script>
+  <script src="assets/js/adminlte.js"></script>
+
+  
+  <!-- jQuery -->
+  <script src="assets/plugins/jquery/jquery.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="assets/plugins/bootstrap/js/bootstrap.bundle.js"></script>
+  <!-- SlimScroll -->
+  <!-- <script src="assets/plugins/slimScroll/jquery.slimscroll.js"></script> -->
+  <!-- FastClick -->
+  <!-- <script src="assets/plugins/fastclick/fastclick.js"></script> -->
+  
+  
   <!-- AdminLTE for demo purposes -->
   <script src="assets/js/demo.js"></script>
-
+  
   <!-- iCheck -->
   <script src="assets/plugins/iCheck/icheck.min.js"></script>
+  
+
   <script>
     $(function () {
       $('input').iCheck({

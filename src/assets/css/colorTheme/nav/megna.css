@@ -1,0 +1,17 @@
+/*******************
+/*Top bar
+*******************/
+.topbar {
+  background: #56c0d8; }
+  .topbar .navbar-header {
+    background: #ffffff; }
+  .topbar .top-navbar .navbar-header .navbar-brand .light-logo {
+    display: none;
+    color: rgba(255, 255, 255, 0.8); }
+  .topbar .navbar-light .navbar-nav .nav-item > a.nav-link {
+    color: #ffffff !important; }
+    .topbar .navbar-light .navbar-nav .nav-item > a.nav-link:hover, .topbar .navbar-light .navbar-nav .nav-item > a.nav-link:focus {
+      color: rgba(255, 255, 255, 0.8) !important; }
+
+.hdr-nav-bar .navbar .navbar-nav > li.active > a {
+  border-color: #56c0d8; }
