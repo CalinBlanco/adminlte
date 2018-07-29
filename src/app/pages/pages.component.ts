@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 
 declare function init_plugins();
 
@@ -7,14 +7,16 @@ declare function init_plugins();
   templateUrl: './pages.component.html',
   styles: []
 })
-export class PagesComponent implements OnInit {
+export class PagesComponent implements OnInit, OnChanges {
 
   constructor() {
-    // init_plugins();
-   }
+    init_plugins();
+  }
 
   ngOnInit() {
-    init_plugins();
+  }
+
+  ngOnChanges() {
   }
 
 }
