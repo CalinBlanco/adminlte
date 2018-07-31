@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { Usuario } from '../../models/usuario.model';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { URL_SERVICIOS } from './../../config/config';
+import { URL_SERVICIOS } from '../../config/config';
+import { SubirArchivoService } from './../subir-archivo/subir-archivo.service';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -15,7 +16,8 @@ export class UsuarioService {
 
   constructor(
     public http: HttpClient,
-    public router: Router
+    public router: Router,
+    public _subirArchivoService: SubirArchivoService
   ) {
     // console.log('servicio de usuario Listo.');
     this.cargarStorage();
@@ -39,6 +41,7 @@ export class UsuarioService {
     localStorage.setItem('id', id);
     localStorage.setItem('token', token);
     localStorage.setItem('usuario', JSON.stringify(usuario));
+    localStorage.setItem('email', usuario.email);
 
     this.usuario = usuario;
     this.token = token;
@@ -91,6 +94,35 @@ export class UsuarioService {
         return resp.usuario
       })
     );
+  }
+
+  actualizarUsuario(usuario: Usuario) {
+    let url = URL_SERVICIOS + '/usuario/' + usuario._id;
+    url += '?token=' + this.token;
+    // console.log(url);
+    // console.log(usuario);
+
+    return this.http.put(url, usuario).pipe(
+      map((resp: any) => {
+        // this.usuario = resp.usuario;
+        let usuarioDB: Usuario = resp.body;
+        this.guardarStorage(usuarioDB._id, this.token, usuarioDB);
+        swal('Usuario actualizado', usuarioDB.nombres, 'success');
+        return true;
+      })
+    );
+  }
+
+  cambiarImagen(archivo: File, id: string) {
+    this._subirArchivoService.subirArchivo(archivo, 'usuarios', id)
+      .then((resp: any) => {
+        this.usuario.img = resp.usuarioActualizado.img;
+        swal('Imagen Actualizada', this.usuario.nombres, 'success');
+        this.guardarStorage(id, this.token, this.usuario);
+      })
+      .catch(resp => {
+        console.log(resp);
+      })
   }
 
 

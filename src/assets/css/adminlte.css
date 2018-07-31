@@ -12861,6 +12861,10 @@ a.text-muted:hover {
   border-radius: 50%;
 }
 
+.img-square {
+  border-radius: 10%;
+}
+
 .img-size-64,
 .img-size-50,
 .img-size-32 {
@@ -12873,6 +12877,11 @@ a.text-muted:hover {
 
 .img-size-50 {
   width: 50px;
+}
+
+.img-size-40 {
+  width: 40px;
+  margin-top: -7px;
 }
 
 .img-size-32 {

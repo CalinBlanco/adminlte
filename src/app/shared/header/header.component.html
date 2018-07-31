@@ -31,6 +31,7 @@
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
+
       <!-- Messages Dropdown Menu -->
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
@@ -98,6 +99,7 @@
           <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
         </div>
       </li>
+
       <!-- Notifications Dropdown Menu -->
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
@@ -125,10 +127,64 @@
           <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
         </div>
       </li>
-      <li class="nav-item">
+      <!-- Control Sidebar -->
+      <!-- <li class="nav-item">
         <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#">
           <i class="fa fa-th-large"></i>
         </a>
+      </li> -->
+
+      <!-- user Settings -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <img [src]="usuario.img | imagen" class="img-size-40 img-circle" alt="User Image">
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <div class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media" align="center">
+              <div class="media-body">
+                <img [src]="usuario.img | imagen" alt="User Avatar" class="img-size-50 mr-3 img-square">
+                <h3 class="dropdown-item-title text-capitalize">
+                  {{ (usuario.nombres.split(' ')[0]).toLowerCase() +' '+ usuario.apePaterno.toLowerCase() +' '+(usuario.apeMaterno.split('')[0]).toLowerCase()+'.'}}
+                  <span class="float-right text-sm text-danger">
+                    <!-- <i class="fa fa-star"></i> -->
+                  </span>
+                </h3>
+                <p class="text-sm text-lowercase">{{ usuario.email }}</p>
+                <p class="text-sm text-muted">
+                  <a routerLink="/perfil" class="btn btn-sm btn-danger">Ver Perfil</a>
+                  <!-- <i class="fa fa-clock-o mr-1"></i> 4 Hours Ago</p> -->
+              </div>
+            </div>
+            <!-- Message End -->
+          </div>
+          <div class="dropdown-divider"></div>
+          <a routerLink="/perfil" class="dropdown-item">
+            <i class="fas fa-user-circle"></i> Perfil
+            <!-- <span class="float-right text-muted text-sm">3 mins</span> -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-money-check-alt"></i> Mi Balance
+            <!-- <span class="float-right text-muted text-sm">3 mins</span> -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-inbox"></i> Inbox
+            <!-- <span class="float-right text-muted text-sm">3 mins</span> -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-cog"></i> Configuración de Cuenta
+            <!-- <span class="float-right text-muted text-sm">3 mins</span> -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a (click)="_usuarioService.logOut()" href="#" class="dropdown-item">
+            <i class="fas fa-power-off"></i> salir
+            <!-- <span class="float-right text-muted text-sm">3 mins</span> -->
+          </a>
+        </div>
       </li>
     </ul>
   </nav>

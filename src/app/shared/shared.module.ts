@@ -6,6 +6,9 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { CommonModule } from '@angular/common';
 
+//Pips Module
+import { PipesModule } from '../pipes/pipes.module';
+
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -14,7 +17,8 @@ import { CommonModule } from '@angular/common';
   ],
   imports: [
     RouterModule,
-    CommonModule
+    CommonModule,
+    PipesModule
   ],
   exports: [
     HeaderComponent,

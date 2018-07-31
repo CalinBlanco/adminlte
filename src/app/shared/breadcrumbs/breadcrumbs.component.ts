@@ -12,29 +12,28 @@ export class BreadcrumbsComponent implements OnInit {
 
   label: string = '';
 
-  constructor( private _router: Router,
-               public _title: Title,
-               public _meta: Meta
-              ) {
+  constructor(private _router: Router,
+    public _title: Title,
+    public _meta: Meta
+  ) {
     this.getDataRoute()
-    .subscribe( data => {
-      console.log(data);
-      this.label = data.titulo;
-      this._title.setTitle(this.label);
+      .subscribe(data => {
+        this.label = data.titulo;
+        this._title.setTitle(this.label);
 
-      let metaTag: MetaDefinition = {
-        name: 'description',
-        content: this.label
-      }
-      this._meta.updateTag(metaTag);
-    })
+        let metaTag: MetaDefinition = {
+          name: 'description',
+          content: this.label
+        }
+        this._meta.updateTag(metaTag);
+      })
   }
 
-  getDataRoute(){
+  getDataRoute() {
     return this._router.events.pipe(
-      filter( evento  => evento instanceof ActivationEnd),
+      filter(evento => evento instanceof ActivationEnd),
       filter((evento: ActivationEnd) => evento.snapshot.firstChild === null),
-      map( evento => evento.snapshot.data )
+      map(evento => evento.snapshot.data)
     )
   }
 

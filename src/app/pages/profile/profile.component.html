@@ -1,0 +1,127 @@
+<div class="row animated fadeIn">
+  <div class="col-7">
+    <div class="card card-secondary">
+      <div class="card-header">
+        <h3 class="card-title">Perfil de Usuario</h3>
+        <!-- <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-widget="collapse">
+            <i class="fa fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-widget="remove">
+            <i class="fa fa-times"></i>
+          </button>
+        </div> -->
+      </div>
+      <div class="card-body">
+        <form ngNativeValidate #f="ngForm" (ngSubmit)="guardar(f.value)" role="form">
+
+          <div class="form-group">
+            <label>Nombres:</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="far fa-user"></i>
+                </span>
+              </div>
+              <input [ngModel]="usuario.nombres" name="nombres" type="text" class="form-control text-uppercase" placeholder="Ingresa tus nombres"
+                required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Apellido paterno:</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="far fa-user"></i>
+                </span>
+              </div>
+              <input [ngModel]="usuario.apePaterno" name="apePaterno" type="text" class="form-control text-uppercase" placeholder="Ingresa tu apellido paterno"
+                required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Apellido materno:</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="far fa-user"></i>
+                </span>
+              </div>
+              <input [ngModel]="usuario.apeMaterno" name="apeMaterno" type="text" class="form-control text-uppercase" placeholder="Ingresa tu apellido materno"
+                required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Correo electrónico:</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fas fa-at"></i>
+                </span>
+              </div>
+              <input type="email" [ngModel]="usuario.email" name="email" [disabled]="usuario.google" class="form-control text-lowercase"
+                placeholder="Ingresa tu correo electrónico" required>
+            </div>
+          </div>
+
+          <!-- <div class="form-group">
+                    <label for="exampleInputFile">File input</label>
+                    <div class="input-group">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="exampleInputFile">
+                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                      </div>
+                      <div class="input-group-append">
+                        <span class="input-group-text" id="">Upload</span>
+                      </div>
+                    </div>
+                  </div> -->
+          <!-- <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div> -->
+          <!-- /.card-body -->
+
+          <div class="card-footer">
+            <button type="submit" class="btn btn-block btn-primary">
+              <i class="far fa-save"></i> Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-5">
+    <div class="card card-secondary">
+      <div class="card-header">
+        <h3 class="card-title">Fotografía del Usuario</h3>
+        <!-- <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-widget="collapse">
+            <i class="fa fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-widget="remove">
+            <i class="fa fa-times"></i>
+          </button>
+        </div> -->
+      </div>
+      <div class="card-body" align="center">
+        <img *ngIf="!imagenTemp" [src]="usuario.img | imagen" class="w150">
+        <img *ngIf="imagenTemp" [src]="imagenTemp" class="w150">
+        <div class="input-group">
+          <input id="imagenInput" type="file" (change)="seleccionImagen( $event.target.files[0] )" class="form-control" placeholder="Elige imagen">
+          <div class="input-group-append">
+            <button (click)="cambiarImagen()" [disabled]="!imagenSubir" class="btn btn-primary" type="button">
+              <i class="far fa-save"></i> Actualizar foto</button>
+          </div>
+        </div>
+        <div>
+          <label>Tamaño:</label>{{fileSize}}</div>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>

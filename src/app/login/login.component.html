@@ -10,7 +10,7 @@
 
       <form ngNativeValidate #f="ngForm" action="#" method="post" (ngSubmit)="ingresar(f)">
         <div class="form-group has-feedback">
-          <input [ngModel]="email" name="email" type="email" class="form-control" placeholder="Correo de usuario" required>
+          <input [ngModel]="email" name="email" type="email" class="form-control text-lowercase" placeholder="Correo de usuario" required>
           <span class="fa fa-envelope form-control-feedback"></span>
         </div>
         <div class="form-group has-feedback">
