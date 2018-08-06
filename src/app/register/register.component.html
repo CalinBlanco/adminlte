@@ -8,25 +8,69 @@
     <div class="card-body register-card-body">
       <p class="login-box-msg">Crea una cuenta</p>
 
-      <form ngNativeValidate [formGroup]="forma" (ngSubmit)="registrarUsuario()" action="../../index.html" method="post">
-        <div class="form-group has-feedback">
-          <input formControlName="nombres" name="nombres" type="text" class="form-control" placeholder="Nombres" required>
-          <span class="fa fa-user form-control-feedback"></span>
-        </div>
-        <div class="form-group has-feedback">
-          <input formControlName="apePaterno" name="apePaterno" type="text" class="form-control" placeholder="Apellido paterno" required>
-          <span class="fa fa-user form-control-feedback"></span>
-        </div>
-        <div class="form-group has-feedback">
-          <input formControlName="apeMaterno" name="apeMaterno" type="text" class="form-control" placeholder="Apellido materno" required>
-          <span class="fa fa-user form-control-feedback"></span>
+      <form ngNativeValidate [formGroup]="forma" (ngSubmit)="registrarUsuario()" method="post">
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">
+              <i class="fa fa-user"></i>
+            </span>
+          </div>
+          <input formControlName="nombres" name="nombres" type="text" class="form-control text-uppercase" placeholder="Nombres" aria-describedby="basic-addon1"
+            required>
         </div>
 
-        <div class="form-group has-feedback">
-          <input formControlName="correo" name="correo" type="email" class="form-control" placeholder="Correo Electrónico" required>
-          <span class="fa fa-envelope form-control-feedback"></span>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">
+              <i class="fa fa-user"></i>
+            </span>
+          </div>
+          <input formControlName="apePaterno" name="apePaterno" type="text" class="form-control text-uppercase" placeholder="Apellido paterno" aria-describedby="basic-addon1"
+            required>
         </div>
-        <div class="form-group has-feedback">
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">
+                <i class="fa fa-user"></i>
+              </span>
+            </div>
+            <input formControlName="apeMaterno" name="apeMaterno" type="text" class="form-control text-uppercase" placeholder="Apellido materno" aria-describedby="basic-addon1"
+              required>
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">
+                <i class="fa fa-envelope"></i>
+              </span>
+            </div>
+            <input formControlName="correo" name="correo" type="email" class="form-control text-lowercase" placeholder="Correo Electrónico" aria-describedby="basic-addon1"
+              required>
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">
+                <i class="fa fa-lock"></i>
+              </span>
+            </div>
+            <input formControlName="password1" name="password1" type="password" class="form-control" placeholder="Contraseña" aria-describedby="basic-addon1"
+              required>
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">
+                <i class="fa fa-lock"></i>
+              </span>
+            </div>
+            <input formControlName="password2" name="password2" type="password" class="form-control" placeholder="Contraseña" aria-describedby="basic-addon1"
+              required>
+        </div>
+
+        <!-- <div class="form-group has-feedback">
           <input formControlName="password1" name="password1" type="password" class="form-control" placeholder="Contraseña" required>
           <span class="fa fa-lock form-control-feedback"></span>
         </div>
@@ -34,7 +78,7 @@
           <input formControlName="password2" name="password2" type="password" class="form-control" placeholder="Repita la contraseña"
             required>
           <span class="fa fa-lock form-control-feedback"></span>
-        </div>
+        </div> -->
 
         <div class="form-group" *ngIf="forma.errors && !forma.pristine">
           <p class="text-danger">Las contraseñas deben ser iguales</p>
@@ -45,7 +89,7 @@
         <div class="form-group row">
           <div class="col-8">
             <div class="checkbox icheck">
-                <!-- <input (change)="newFunction()" type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked> -->
+              <!-- <input (change)="newFunction()" type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked> -->
               <input type="checkbox" name="condiciones" [formControlName]="'condiciones'">
               <label>Acepto los
                 <a href="#">términos</a>

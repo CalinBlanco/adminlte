@@ -4,13 +4,13 @@ import { NgModule } from '@angular/core';
 // Rutas
 import { APP_ROUTES } from './app.routes';
 
-//Módulos
+// Módulos
 import { PagesModule } from './pages/pages.module';
 
-//Servicios
+// Servicios
 import { ServiceModule } from './services/service.module';
 
-//Temporal
+// Temporal
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 

@@ -110,14 +110,15 @@
         <img *ngIf="!imagenTemp" [src]="usuario.img | imagen" class="w150">
         <img *ngIf="imagenTemp" [src]="imagenTemp" class="w150">
         <div class="input-group">
-          <input id="imagenInput" type="file" (change)="seleccionImagen( $event.target.files[0] )" class="form-control" placeholder="Elige imagen">
+          <input id="imagenInput" type="file" (change)="dimensionImagen( $event.target.files[0] )" class="form-control" placeholder="Elige imagen">
           <div class="input-group-append">
             <button (click)="cambiarImagen()" [disabled]="!imagenSubir" class="btn btn-primary" type="button">
               <i class="far fa-save"></i> Actualizar foto</button>
           </div>
         </div>
         <div>
-          <label>Tamaño:</label>{{fileSize}}</div>
+          <label>Tamaño: </label>{{ fileSize }}
+        </div>
       </div>
     </div>
   </div>

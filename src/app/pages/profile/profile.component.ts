@@ -35,31 +35,64 @@ export class ProfileComponent implements OnInit {
       .subscribe();
   }
 
-  seleccionImagen(archivo: File) {
+  dimensionImagen(archivo: File) {
     if (!archivo) {
       this.imagenSubir = null;
       return;
     }
+    // --INICIO Identificar el width y el height de la imagen
+    let _URL = window.URL || (window as any).webkitURL;
+    let file, img;
+    let self = this;
 
     if (archivo.type.indexOf('image') < 0) {
       swal('Sólo imágenes', 'El archivo seleccionado no es una imagen', 'error');
       this.imagenSubir = null;
       this.imagenTemp = null;
-      (<HTMLInputElement>document.getElementById('imagenInput')).value = "";
+      (<HTMLInputElement>document.getElementById('imagenInput')).value = '';
       return;
-    };
+    }
+
+    if ((file = archivo)) {
+      let img = new Image();
+      img.onload = function () {
+        // console.log('Width: ', parseInt(img.width) + " y Height: " + parseInt(img.height));
+        self.seleccionImagen(archivo, img.width, img.height);
+      };
+      img.onerror = function () {
+        console.log('El archivo: ' + file.type + ' no es válido.');
+      };
+      img.src = _URL.createObjectURL(file);
+    }
+    // --  FIN Identificar el width y el height de la imagen
+  }
+
+  seleccionImagen(archivo: File, width: number, height: number) {
+
+    // Emitiendo dimensiones de la imagen
+    swal('Ancho: ' + width + ' px' + ', Alto: ' + height + ' px', '', 'info');
+
     this.imagenSubir = archivo;
-    this.fileSize = (archivo.size / 1024).toPrecision(4) + ' KB';
+
+    // Calculando el tamaño del archivo
+    this.fileSize = this.bytesToSize(archivo.size);
+    // console.log(this.fileSize);
 
     let reader = new FileReader();
     let urlImagenTemp = reader.readAsDataURL(archivo);
 
     reader.onloadend = () => this.imagenTemp = reader.result;
-
   }
 
   cambiarImagen() {
     this._usuarioService.cambiarImagen(this.imagenSubir, this.usuario._id);
+  }
+
+  bytesToSize(bytes: number) {
+    let sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+    if (bytes === 0) { return '0 Byte'; }
+    let i: number = Math.floor(Math.log(bytes) / Math.log(1024));
+    return (bytes / Math.pow(1024, i)).toFixed(2) + ' ' + sizes[i];
   }
 
 }
