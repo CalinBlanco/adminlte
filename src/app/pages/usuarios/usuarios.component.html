@@ -49,7 +49,7 @@
         <h3 class="card-title">Usuarios Registrados (
           <small>{{ totalRegistros }}</small> )</h3>
 
-        <table class="table table-bordered table-hover dataTable">
+        <table class="table table-hover dataTable">
           <thead>
             <tr>
               <th>Imagen</th>
@@ -63,10 +63,10 @@
             </tr>
           </thead>
 
-          <tbody>
+          <tbody class="table-bordered">
             <tr *ngFor="let usuario of usuarios">
               <td class="w50">
-                <img (click)="mostrarModal( usuario._id )" [src]="usuario.img | imagen" class="img-50 img-circle pointer">
+                <img (click)="mostrarModal( usuario._id )" [src]="usuario.img | imagen" class="img-50 pointer">
               </td>
               <td>{{ usuario.email }}</td>
               <td>{{ usuario.nombres }}</td>

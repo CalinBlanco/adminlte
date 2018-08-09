@@ -12,11 +12,11 @@ export class ImagenPipe implements PipeTransform {
 
     if (!img) {
       return url + '/usuarios/xxx';
-    };
+    }
 
     if (img.indexOf('googleusercontent') >= 0) {
       return img;
-    };
+    }
 
     switch (tipo) {
       case 'usuario':
@@ -34,8 +34,7 @@ export class ImagenPipe implements PipeTransform {
       default:
         console.log('Tipo de imagen no existe, usuario, médico, hospital');
         url += '/usuarios/xxx';
-    };
-    
+    }
     return url;
   }
 

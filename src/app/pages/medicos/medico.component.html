@@ -1,0 +1,90 @@
+<div class="row animated fadeIn">
+  <div class="col-6">
+    <div class="card card-secondary">
+      <div class="card-header">
+        <h3 class="card-title">{{ titulo }}</h3>
+      </div>
+      <div class="card-body">
+        <form #f="ngForm" ngNativeValidate method="post" (ngSubmit)="guardarMedico(f)">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">
+                <i class="fa fa-user"></i>
+              </span>
+            </div>
+            <input [(ngModel)]="medico.nombres" name="nombres" type="text" class="form-control text-uppercase" placeholder="Nombres"
+              aria-describedby="basic-addon1" required>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">
+                <i class="fa fa-user"></i>
+              </span>
+            </div>
+            <input [(ngModel)]="medico.apePaterno" name="apePaterno" type="text" class="form-control text-uppercase" placeholder="Apellido paterno"
+              aria-describedby="basic-addon1" required>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">
+                <i class="fa fa-user"></i>
+              </span>
+            </div>
+            <input [(ngModel)]="medico.apeMaterno" name="apeMaterno" type="text" class="form-control text-uppercase" placeholder="Apellido materno"
+              aria-describedby="basic-addon1" required>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">
+                <i class="far fa-hospital"></i>
+              </span>
+            </div>
+            <select (change)="cambioHospital( $event.target.value )" [(ngModel)]="medico.hospital" name="hospital" class="form-control"
+              required>
+              <option value="" selected>SELECCIONE HOSPITAL ...</option>
+              <option *ngFor="let hospital of hospitales" [value]="hospital._id">{{hospital.nombre}}</option>
+            </select>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-6">
+              <a routerLink="/medicos" class="btn btn-default btn-block btn-flat">Cancelar</a>
+            </div>
+            <div class="col-6">
+              <button type="submit" class="btn btn-primary btn-block btn-flat">
+                <i class="far fa-save"></i>
+                {{btnInteligente}}
+              </button>
+            </div>
+            <!-- /.col -->
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-3">
+    <div class="card card-secondary">
+      <div class="card-header">
+        <h3 class="card-title">Imagen del Hospital</h3>
+      </div>
+      <div class="card-body" align="center">
+        <img [src]="hospital.img | imagen: 'hospital'" class="rounded img-fluid">
+      </div>
+    </div>
+  </div>
+
+  <div class="col-3" *ngIf="medico._id">
+    <div class="card card-secondary">
+      <div class="card-header">
+        <h3 class="card-title">Fotografia del Medico</h3>
+      </div>
+      <div class="card-body">
+        <img (click)="cambiarFoto()" [src]="medico.img | imagen: 'medico'" class="rounded img-fluid pointer">
+      </div>
+    </div>
+  </div>
+</div>

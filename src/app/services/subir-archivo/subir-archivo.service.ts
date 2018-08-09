@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
-import { URL_SERVICIOS } from './../../config/config';
+import { URL_SERVICIOS } from '../../config/config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SubirArchivoService {
 
-  constructor() { }
+  constructor(
+  ) { }
 
-  subirArchivo(archivo: File, tipo: string, id: string) {
+  subirArchivo(archivo: File, tipo: string, id: string, token: string) {
 
     return new Promise((resolve, reject) => {
       let formData = new FormData();
@@ -23,11 +24,11 @@ export class SubirArchivoService {
           } else {
             console.log('Falló la subida');
             reject(JSON.parse(xhr.response));
-          };
+          }
         }
       };
 
-      let url = URL_SERVICIOS + '/upload/' + tipo + '/' + id;
+      let url = URL_SERVICIOS + '/upload/' + tipo + '/' + id + '?token=' + token;
 
       xhr.open('PUT', url, true);
 
@@ -35,6 +36,4 @@ export class SubirArchivoService {
 
     });
   }
-
-
 }

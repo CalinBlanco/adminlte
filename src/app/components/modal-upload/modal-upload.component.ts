@@ -1,6 +1,7 @@
 import { SubirArchivoService } from './../../services/subir-archivo/subir-archivo.service';
 import { Component, OnInit } from '@angular/core';
 import { ModalUploadService } from './modal-upload.service';
+import { UsuarioService } from './../../services/usuario/usuario.service';
 
 @Component({
   selector: 'app-modal-upload',
@@ -13,7 +14,8 @@ export class ModalUploadComponent implements OnInit {
 
   constructor(
     public _subirArchivoService: SubirArchivoService,
-    public _modalUploadService: ModalUploadService
+    public _modalUploadService: ModalUploadService,
+    public _usuarioService: UsuarioService
   ) { }
 
   ngOnInit() {
@@ -47,7 +49,7 @@ export class ModalUploadComponent implements OnInit {
     this._modalUploadService.ocultarModal();
   }
   SubirImagen() {
-    this._subirArchivoService.subirArchivo(this.imagenSubir, this._modalUploadService.tipo, this._modalUploadService.id)
+    this._subirArchivoService.subirArchivo(this.imagenSubir, this._modalUploadService.tipo, this._modalUploadService.id, this._usuarioService.token)
       .then(resp => {
 
         this._modalUploadService.notificacion.emit(resp);

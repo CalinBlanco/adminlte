@@ -43,3 +43,18 @@
 .pointer {
   cursor: pointer;
 }
+
+.btn-rounded {
+  border-radius: 60px;
+  padding: 7px 18px; }
+.btn-rounded.btn-lg {
+  padding: .75rem 1.5rem; }
+.btn-rounded.btn-sm {
+  padding: .25rem .5rem;
+  font-size: 12px; }
+.btn-rounded.btn-xs {
+  padding: .25rem .5rem;
+  font-size: 10px; }
+.btn-rounded.btn-md {
+  padding: 12px 35px;
+  font-size: 16px; }

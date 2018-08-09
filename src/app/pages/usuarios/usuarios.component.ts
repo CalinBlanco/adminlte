@@ -27,8 +27,7 @@ export class UsuariosComponent implements OnInit {
   ngOnInit() {
     this.cargarUsuarios();
 
-    this._modalUploadService.notificacion
-      .subscribe(resp => this.cargarUsuarios());
+    this._modalUploadService.notificacion.subscribe(() => this.cargarUsuarios());
 
   }
 
@@ -93,7 +92,7 @@ export class UsuariosComponent implements OnInit {
 
     swal({
       title: '¿Estás Seguro?',
-      text: 'Está a unpo de borrar a ' + usuario.nombres,
+      text: 'Está a punto de borrar a ' + usuario.nombres,
       icon: 'warning',
       buttons: true,
       dangerMode: true,
