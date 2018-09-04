@@ -58,3 +58,7 @@
 .btn-rounded.btn-md {
   padding: 12px 35px;
   font-size: 16px; }
+
+.border{
+  border: solid red 1px !important;
+}

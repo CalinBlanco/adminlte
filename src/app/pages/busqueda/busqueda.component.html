@@ -1,0 +1,69 @@
+<div class="row">
+  <div class="col-4">
+    <div class="card card-secondary">
+      <div class="card-header">
+        <h3 class="card-title">Usuarios</h3>
+      </div>
+      <div class="card-body">
+        <table class="table table-hover" *ngIf="usuarios.length > 0">
+          <tbody>
+            <tr *ngFor="let usuario of usuarios" [routerLink]="['/usuarios']" class="pointer">
+              <td>
+                <img [src]="usuario.img | imagen: 'usuario'" class="img-50 pointer">
+              </td>
+              <td>{{usuario.apePaterno +' '+ usuario.apeMaterno+', '+usuario.nombres}}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div *ngIf="usuarios.length === 0" class="alert alert-info"> No hay registros de usuarios</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-4">
+    <div class="card card-secondary">
+      <div class="card-header">
+        <h3 class="card-title">Médicos</h3>
+      </div>
+      <div class="card-body">
+        <table class="table table-hover" *ngIf="medicos.length > 0">
+          <tbody>
+            <tr *ngFor="let medico of medicos" [routerLink]="['/medico', medico._id]" class="pointer">
+              <td>
+                <img [src]="medico.img | imagen: 'medico'" class="img-50 pointer">
+              </td>
+              <td>{{medico.apePaterno +' '+ medico.apeMaterno+', '+medico.nombres}}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div *ngIf="medicos.length === 0" class="alert alert-info"> No hay registros de médicos</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-4">
+    <div class="card card-secondary">
+      <div class="card-header">
+        <h3 class="card-title">Hospitales</h3>
+      </div>
+      <div class="card-body">
+        <table class="table table-hover" *ngIf="hospitales.length > 0">
+          <tbody>
+            <tr *ngFor="let hospital of hospitales" [routerLink]="['/hospitales']" class="pointer">
+              <td>
+                <img [src]="hospital.img | imagen: 'hospital'" class="img-50 pointer">
+              </td>
+              <td>{{ hospital.nombre }}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div *ngIf="hospitales.length === 0" class="alert alert-info"> No hay registros de hospitales</div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
