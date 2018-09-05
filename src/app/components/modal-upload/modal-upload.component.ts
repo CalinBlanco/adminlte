@@ -3,6 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { ModalUploadService } from './modal-upload.service';
 import { UsuarioService } from './../../services/usuario/usuario.service';
 
+// Importamos el SweetAlert
+import swal from 'sweetalert';
+
 @Component({
   selector: 'app-modal-upload',
   templateUrl: './modal-upload.component.html',
@@ -40,7 +43,7 @@ export class ModalUploadComponent implements OnInit {
     let reader = new FileReader();
     let urlImagenTemp = reader.readAsDataURL(archivo);
 
-    reader.onloadend = () => this.imagenTemp = reader.result;
+    reader.onloadend = () => this.imagenTemp = String(reader.result);
   }
 
   cerrarModal() {

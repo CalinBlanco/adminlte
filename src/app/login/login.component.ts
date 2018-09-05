@@ -53,11 +53,9 @@ export class LoginComponent implements OnInit {
       let token = googleUser.getAuthResponse().id_token;
 
       this._usuarioService.loginGoogle(token)
-        .subscribe(() => window.location.href = '/dashboard' );   //this.router.navigate(['/dashboard'])
+        .subscribe(() => window.location.href = '#/dashboard');   //this.router.navigate(['/dashboard'])
     });
   }
-
-
 
   ingresar(forma: NgForm) {
 
@@ -72,7 +70,7 @@ export class LoginComponent implements OnInit {
     );
 
     this._usuarioService.login(usuario, forma.value.recuerdame)
-      .subscribe(() => window.location.href = '/dashboard');    //this.router.navigate(['/dashboard'])
+      .subscribe(() => window.location.href = '#/dashboard');   //this.router.navigate(['/dashboard']));   
 
     // console.log(forma.valid);
     // console.log(forma.value);

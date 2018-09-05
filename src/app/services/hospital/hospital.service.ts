@@ -6,6 +6,9 @@ import { SubirArchivoService } from './../subir-archivo/subir-archivo.service';
 import { map } from 'rxjs/operators';
 import { UsuarioService } from '../usuario/usuario.service';
 
+// Importamos el SweetAlert
+import swal from 'sweetalert';
+
 @Injectable({
   providedIn: 'root'
 })

@@ -11,6 +11,7 @@ import {
   MedicoService,
   LoginGuardGuard,
   AdminGuard,
+  VerificaTokenGuard,
   SubirArchivoService
 } from "./service.index";
 
@@ -30,6 +31,7 @@ import { ModalUploadService } from './../components/modal-upload/modal-upload.se
     MedicoService,
     LoginGuardGuard,
     AdminGuard,
+    VerificaTokenGuard,
     SubirArchivoService,
     ModalUploadService
   ],

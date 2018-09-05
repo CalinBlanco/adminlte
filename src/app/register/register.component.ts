@@ -3,8 +3,10 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Router } from '@angular/router';
 import { UsuarioService } from '../services/service.index';
 
-import swal from 'sweetalert';
 import { Usuario } from '../models/usuario.model';
+
+// Importamos el SweetAlert
+import swal from 'sweetalert';
 
 // declare function init_plugins_icheck();
 

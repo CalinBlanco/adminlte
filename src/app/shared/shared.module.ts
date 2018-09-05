@@ -6,6 +6,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { CommonModule } from '@angular/common';
 
+import { ModalUploadComponent } from '../components/modal-upload/modal-upload.component';
+
 //Pips Module
 import { PipesModule } from '../pipes/pipes.module';
 
@@ -13,7 +15,8 @@ import { PipesModule } from '../pipes/pipes.module';
   declarations: [
     HeaderComponent,
     SidebarComponent,
-    BreadcrumbsComponent
+    BreadcrumbsComponent,
+    ModalUploadComponent
   ],
   imports: [
     RouterModule,
@@ -23,7 +26,8 @@ import { PipesModule } from '../pipes/pipes.module';
   exports: [
     HeaderComponent,
     SidebarComponent,
-    BreadcrumbsComponent
+    BreadcrumbsComponent,
+    ModalUploadComponent
   ]
 })
 

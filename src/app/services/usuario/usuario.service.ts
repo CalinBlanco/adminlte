@@ -7,6 +7,8 @@ import { SubirArchivoService } from './../subir-archivo/subir-archivo.service';
 import { map, catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs/internal/observable/throwError';
 
+// Importamos el SweetAlert
+import swal from 'sweetalert';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +26,24 @@ export class UsuarioService {
   ) {
     // console.log('servicio de usuario Listo.');
     this.cargarStorage();
+  }
+
+  renuevaToken() {
+    let url = URL_SERVICIOS + '/login/renuevatoken?token=' + this.token;
+
+    return this.http.get(url).pipe(
+      map((resp: any) => {
+        this.token = resp.token;
+        localStorage.setItem('token', this.token);
+        console.log('Token Renovado');
+        return true;
+      }),
+      catchError(err => {
+        this.logOut();
+        swal('No se pudo renovar token', 'No fue posible renovar token', 'error');
+        return throwError(err);
+      })
+    );
   }
 
   estaLogueado() {
